@@ -5,4 +5,4 @@ The front end technologies used in LMS are: HTML5, CSS3, Twitter Bootstrap3, Ang
 
 The back end technologies used in LMS are: Core Java, RESTfull webservices using Jersey(JAX-RS), Spring framework, Hibernate, Oracle
 
-Copyright &copy; @anandk26 and @aakash0991
+Copyright &copy; @anandk26 and @aakash_agarwal
