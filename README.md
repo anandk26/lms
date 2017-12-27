@@ -3,6 +3,6 @@ LMS is a Library Management System. This is a proof of concept application. LMS 
 
 The front end technologies used in LMS are: HTML5, CSS3, Twitter Bootstrap3, AngularJS, JavaScript
 
-The back end technologies used in LMS are: Core Java, RESTfull webservices using Jersey(JAX-RS), Spring framework, Hibernate, Oracle
+The back end technologies used in LMS are: Core Java, RESTfull webservices using Jersey(JAX-RS), EJB3.0, JPA, Oracle
 
 Copyright &copy; @anandk26 and @aakash_agarwal
