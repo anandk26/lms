@@ -1,15 +1,15 @@
 package controllers;
 
 import beans.RegisterRequestBean;
-import beans.RegisterResponseBean;
+import beans.GenericResponseBean;
 import model.RegisterCustomer;
 import utils.Constants;
 import validations.RegisterRequestValidation;
 
 public class RegistrationController {
-	public RegisterResponseBean register(RegisterRequestBean requestBean) {
+	public GenericResponseBean register(RegisterRequestBean requestBean) {
 		RegisterCustomer registrationModel = new RegisterCustomer();
-		RegisterResponseBean response = new RegisterResponseBean();
+		GenericResponseBean response = new GenericResponseBean();
 		
 		RegisterRequestValidation validator = new RegisterRequestValidation();
 		if(!validator.isRequestValid(requestBean)) {

@@ -1,6 +1,6 @@
 package beans;
 
-public class RegisterResponseBean {
+public class GenericResponseBean {
 	private int responseCode;
 	private String reponseMessage;
 
