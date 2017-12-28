@@ -20,8 +20,7 @@
         <dependency>
             <groupId>org.glassfish.jersey.bundles</groupId>
             <artifactId>jaxrs-ri</artifactId>
-            <version>2.26</version>
-            <scope>provided</scope>
+            <version>2.16</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>

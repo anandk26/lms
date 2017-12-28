@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -30,10 +31,12 @@ public class CustomerDataModel {
 	private long contactNumber;
 	
     @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "ADDRESSID", referencedColumnName = "ADDRESSID")
 	private AddressModel address;
 	
     @OneToOne(cascade = CascadeType.PERSIST)
-	private LoginDataModel logindata;
+	@JoinColumn(name = "USERNAME", referencedColumnName = "USERNAME")
+    private LoginDataModel logindata;
 
 	public long getCustomerId() {
 		return customerId;

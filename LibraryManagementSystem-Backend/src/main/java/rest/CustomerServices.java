@@ -38,7 +38,7 @@ public class CustomerServices {
 //			} else {
 //				responseMessage = "Customer Authenticated.";
 //				response = new ApplicationResponse(Response.Status.OK.getStatusCode(), responseMessage);
-				return Response.ok().build();
+				return Response.ok("Login done").build();
 //			}
 //		}
 	}
