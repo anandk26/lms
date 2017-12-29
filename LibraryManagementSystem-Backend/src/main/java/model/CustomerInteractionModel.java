@@ -2,15 +2,20 @@ package model;
 
 import beans.RegisterRequestBean;
 import model.dao.CustomerDataDAO;
+import model.dao.LoginDataDAO;
 import model.entities.AddressModel;
 import model.entities.CustomerDataModel;
 import model.entities.LoginDataModel;
 
-public class RegisterCustomer {
-	
-	private AddressModel address = new AddressModel();
-	private CustomerDataModel customer = new CustomerDataModel();
-	private LoginDataModel login = new LoginDataModel();
+public class CustomerInteractionModel {
+    private final AddressModel address = new AddressModel();
+	private final CustomerDataModel customer = new CustomerDataModel();
+	private final LoginDataModel login = new LoginDataModel();
+    
+    public boolean login(String username, String password) {
+        LoginDataModel loginData = new LoginDataDAO().readData(username);
+        return (loginData!= null && loginData.getPassword().equals(password));
+    }
 
 	public boolean register(RegisterRequestBean requestBean) {
 		this.mapEntityParams(requestBean);
