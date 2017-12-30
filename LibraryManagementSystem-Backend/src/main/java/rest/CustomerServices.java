@@ -9,8 +9,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import beans.RegisterRequestBean;
+import beans.services.register.RegisterRequestBean;
 import beans.GenericResponseBean;
+import beans.services.customer.CustomerResponseBean;
 import controllers.CustomerInteractionController;
 
 @Path("customerservice")
@@ -53,8 +54,8 @@ public class CustomerServices {
     
     @GET
 	@Path("customer")
-	public Response getCustomerDetails(@QueryParam("username") String username, String password) {
-		GenericResponseBean response = this.customerController.login(username, password);
+	public Response getCustomerDetails(@QueryParam("username") String username) {
+		CustomerResponseBean response = this.customerController.getCustomerDetails(username);
         switch(response.getResponseCode()) {
 			case 200:
 				return Response.ok(response).build();

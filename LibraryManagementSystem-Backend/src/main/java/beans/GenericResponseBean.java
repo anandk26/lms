@@ -1,6 +1,7 @@
 package beans;
 
 public class GenericResponseBean {
+    
 	private int responseCode;
 	private String reponseMessage;
 

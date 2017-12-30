@@ -1,6 +1,6 @@
 package model;
 
-import beans.RegisterRequestBean;
+import beans.services.register.RegisterRequestBean;
 import model.dao.CustomerDataDAO;
 import model.dao.LoginDataDAO;
 import model.entities.AddressModel;
@@ -21,12 +21,17 @@ public class CustomerInteractionModel {
 		this.mapEntityParams(requestBean);
 		return new CustomerDataDAO().writeData(this.customer);
 	}
+    
+    public CustomerDataModel getCustomerDetails(String username) {
+        CustomerDataModel customerDetails = new CustomerDataDAO().readData(username);
+        return customerDetails;
+    }
 	
 	private void mapEntityParams(RegisterRequestBean requestBean) {
 		//Mapping address entity
 		address.setAddressLine1(requestBean.getAddressLine1());
 		if(!(requestBean.getAddressLine2().isEmpty() || requestBean.getAddressLine2() == null)) {
-			address.setAddressLine1(requestBean.getAddressLine2());
+			address.setAddressLine2(requestBean.getAddressLine2());
 		}
 		address.setCity(requestBean.getCity());
 		address.setCountry(requestBean.getCountry());
