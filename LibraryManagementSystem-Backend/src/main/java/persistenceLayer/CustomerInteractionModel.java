@@ -1,16 +1,22 @@
-package model;
+package persistenceLayer;
 
-import beans.services.register.RegisterRequestBean;
-import model.dao.CustomerDataDAO;
-import model.dao.LoginDataDAO;
-import model.entities.AddressModel;
-import model.entities.CustomerDataModel;
-import model.entities.LoginDataModel;
+import beans.services.customerservice.register.RegisterRequestBean;
+import persistenceLayer.dao.CustomerDataDAO;
+import persistenceLayer.dao.LoginDataDAO;
+import persistenceLayer.model.AddressModel;
+import persistenceLayer.model.CustomerDataModel;
+import persistenceLayer.model.LoginDataModel;
+import persistenceLayer.conf.SpringAppContext;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class CustomerInteractionModel {
-    private final AddressModel address = new AddressModel();
-	private final CustomerDataModel customer = new CustomerDataModel();
-	private final LoginDataModel login = new LoginDataModel();
+    private final ApplicationContext context = new AnnotationConfigApplicationContext(SpringAppContext.class);
+    
+    private final AddressModel address = context.getBean(AddressModel.class);
+	private final CustomerDataModel customer = context.getBean(CustomerDataModel.class);
+	private final LoginDataModel login = context.getBean(LoginDataModel.class);
     
     public boolean login(String username, String password) {
         LoginDataModel loginData = new LoginDataDAO().readData(username);

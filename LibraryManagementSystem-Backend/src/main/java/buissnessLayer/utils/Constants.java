@@ -1,4 +1,4 @@
-package utils;
+package buissnessLayer.utils;
 
 public class Constants {
 	public static final int HTTP_BAD_REQEST = 400;

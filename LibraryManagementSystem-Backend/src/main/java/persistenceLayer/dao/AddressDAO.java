@@ -1,9 +1,9 @@
-package model.dao;
+package persistenceLayer.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import model.entities.AddressModel;
+import persistenceLayer.model.AddressModel;
 
 public class AddressDAO {
     

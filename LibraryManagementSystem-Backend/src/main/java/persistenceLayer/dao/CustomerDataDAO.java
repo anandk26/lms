@@ -1,10 +1,10 @@
-package model.dao;
+package persistenceLayer.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import model.entities.CustomerDataModel;
+import persistenceLayer.model.CustomerDataModel;
 
 public class CustomerDataDAO {
 

@@ -1,4 +1,4 @@
-package rest;
+package presentationLayer.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -9,23 +9,24 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import beans.services.register.RegisterRequestBean;
+import beans.services.customerservice.register.RegisterRequestBean;
 import beans.GenericResponseBean;
-import beans.services.customer.CustomerResponseBean;
-import controllers.CustomerInteractionController;
+import buissnessLayer.controllers.CustomerInteractionController;
 
 @Path("customerservice")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class CustomerServices {
+
     private final CustomerInteractionController customerController = new CustomerInteractionController();
-	@GET
+
+    @GET
 	@Path("login")
 	public Response login(@QueryParam("username") String username, @QueryParam("password") String password) {
 		GenericResponseBean response = this.customerController.login(username, password);
         switch(response.getResponseCode()) {
 			case 200:
-				return Response.ok(response).build();
+				return Response.ok().entity(response).build();
 			case 400:
 				return Response.status(Response.Status.BAD_REQUEST).entity(response).build();
 			case 503:
@@ -42,7 +43,7 @@ public class CustomerServices {
 
 		switch(response.getResponseCode()) {
 			case 200:
-				return Response.ok(response).build();
+				return Response.ok().entity(response).build();
 			case 400:
 				return Response.status(Response.Status.BAD_REQUEST).entity(response).build();
 			case 503:
@@ -55,10 +56,10 @@ public class CustomerServices {
     @GET
 	@Path("customer")
 	public Response getCustomerDetails(@QueryParam("username") String username) {
-		CustomerResponseBean response = this.customerController.getCustomerDetails(username);
+		GenericResponseBean response = this.customerController.getCustomerDetails(username);
         switch(response.getResponseCode()) {
 			case 200:
-				return Response.ok(response).build();
+				return Response.ok().entity(response).build();
 			case 400:
 				return Response.status(Response.Status.BAD_REQUEST).entity(response).build();
 			case 503:

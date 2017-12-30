@@ -1,10 +1,10 @@
-package model.dao;
+package persistenceLayer.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import model.entities.LoginDataModel;
+import persistenceLayer.model.LoginDataModel;
 
 public class LoginDataDAO {
 	

@@ -1,5 +1,6 @@
-package model.entities;
+package persistenceLayer.model;
 
+import persistenceLayer.model.AddressModel;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import org.springframework.stereotype.Component;
 
+@Component
 @Entity
 @Table(schema = "LMS", name = "CUSTOMERDATA")
 @SequenceGenerator(name = "cust_seq", sequenceName = "CUSTOMERDATA_SEQ1")

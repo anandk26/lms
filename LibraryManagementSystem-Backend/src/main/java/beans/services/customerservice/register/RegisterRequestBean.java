@@ -1,4 +1,4 @@
-package beans.services.register;
+package beans.services.customerservice.register;
 
 public class RegisterRequestBean {
 	

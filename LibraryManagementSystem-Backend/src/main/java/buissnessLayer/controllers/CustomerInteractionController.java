@@ -1,13 +1,13 @@
-package controllers;
+package buissnessLayer.controllers;
 
 import beans.GenericResponseBean;
-import beans.services.customer.CustomerResponseBean;
-import beans.services.register.RegisterRequestBean;
-import model.CustomerInteractionModel;
-import model.entities.CustomerDataModel;
-import utils.Constants;
-import validations.LoginRequestValidation;
-import validations.RegisterRequestValidation;
+import beans.services.customerservice.customer.CustomerResponseBean;
+import beans.services.customerservice.register.RegisterRequestBean;
+import persistenceLayer.CustomerInteractionModel;
+import persistenceLayer.model.CustomerDataModel;
+import buissnessLayer.utils.Constants;
+import buissnessLayer.validations.LoginRequestValidation;
+import buissnessLayer.validations.RegisterRequestValidation;
 
 public class CustomerInteractionController {
     
@@ -68,7 +68,7 @@ public class CustomerInteractionController {
 				response.setReponseMessage("Username incorrect");
 			} else {
 				response.setResponseCode(Constants.HTTP_SUCCESS);
-                response.setReponseMessage("Customer Detals fetched successfully");
+                response.setReponseMessage("Customer Details fetched successfully");
                 response.setResponse(customer);
 			}
 		}
