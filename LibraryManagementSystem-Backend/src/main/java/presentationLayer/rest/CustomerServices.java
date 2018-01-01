@@ -1,6 +1,5 @@
 package presentationLayer.rest;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -11,14 +10,25 @@ import javax.ws.rs.core.Response;
 
 import beans.services.customerservice.register.RegisterRequestBean;
 import beans.GenericResponseBean;
-import buissnessLayer.controllers.CustomerInteractionController;
+import businessLayer.SpringBusinessContext;
+
+import businessLayer.controllers.CustomerInteractionController;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @Path("customerservice")
-@Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class CustomerServices {
 
-    private final CustomerInteractionController customerController = new CustomerInteractionController();
+    private final CustomerInteractionController customerController;
+    private final ApplicationContext context;
+    
+    public CustomerServices() {
+        this.context = new AnnotationConfigApplicationContext(SpringBusinessContext.class);
+        this.customerController = this.context.getBean("customerInteractionController",
+            CustomerInteractionController.class);
+    }
 
     @GET
 	@Path("login")

@@ -1,21 +1,31 @@
-package buissnessLayer.controllers;
+package businessLayer.controllers;
 
 import beans.GenericResponseBean;
 import beans.services.customerservice.customer.CustomerResponseBean;
 import beans.services.customerservice.register.RegisterRequestBean;
-import persistenceLayer.CustomerInteractionModel;
-import persistenceLayer.model.CustomerDataModel;
-import buissnessLayer.utils.Constants;
-import buissnessLayer.validations.LoginRequestValidation;
-import buissnessLayer.validations.RegisterRequestValidation;
 
+import persistenceLayer.model.CustomerInteractionModel;
+import persistenceLayer.entities.CustomerDataModel;
+import persistenceLayer.SpringPersistenceContext;
+
+import businessLayer.utils.Constants;
+import businessLayer.validations.LoginRequestValidation;
+import businessLayer.validations.RegisterRequestValidation;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
+@Component
 public class CustomerInteractionController {
     
-    private final CustomerInteractionModel customerInteraction = new CustomerInteractionModel();
-    
+    private CustomerInteractionModel customerInteraction;
+    private final ApplicationContext context = new AnnotationConfigApplicationContext(SpringPersistenceContext.class);
+
     public GenericResponseBean register(RegisterRequestBean requestBean) {
         
 		GenericResponseBean response = new GenericResponseBean();
+        this.customerInteraction = this.context.getBean("customerInteractionModel", CustomerInteractionModel.class);
 		
 		RegisterRequestValidation validator = new RegisterRequestValidation();
 		if(!validator.isRequestValid(requestBean)) {
@@ -38,6 +48,7 @@ public class CustomerInteractionController {
         
 		GenericResponseBean response = new GenericResponseBean();
 		LoginRequestValidation validator = new LoginRequestValidation();
+        this.customerInteraction = this.context.getBean("customerInteractionModel", CustomerInteractionModel.class);
         
 		if(!validator.isRequestValid(username, password)) {
 			response.setResponseCode(Constants.HTTP_BAD_REQEST);
@@ -57,6 +68,7 @@ public class CustomerInteractionController {
     public CustomerResponseBean getCustomerDetails(String username) {
         
 		CustomerResponseBean response = new CustomerResponseBean();
+        this.customerInteraction = this.context.getBean("customerInteractionModel", CustomerInteractionModel.class);
         
 		if(username == null || username.equals("")) {
 			response.setResponseCode(Constants.HTTP_BAD_REQEST);

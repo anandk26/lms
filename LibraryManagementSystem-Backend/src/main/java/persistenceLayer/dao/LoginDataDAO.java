@@ -4,8 +4,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import persistenceLayer.model.LoginDataModel;
+import org.springframework.stereotype.Component;
 
+import persistenceLayer.entities.LoginDataModel;
+
+@Component
 public class LoginDataDAO {
 	
 	private EntityManagerFactory entityManagerFactory;

@@ -4,9 +4,9 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <!-- Classes -->
     <!-- properties -->
-    <class>persistenceLayer.model.AddressModel</class>
-    <class>persistenceLayer.model.CustomerDataModel</class>
-    <class>persistenceLayer.model.LoginDataModel</class>
+    <class>persistenceLayer.entities.AddressModel</class>
+    <class>persistenceLayer.entities.LoginDataModel</class>
+    <class>persistenceLayer.entities.CustomerDataModel</class>
     <properties>
       <property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
       <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>

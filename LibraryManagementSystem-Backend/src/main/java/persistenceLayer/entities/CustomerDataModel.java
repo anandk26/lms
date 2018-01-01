@@ -1,6 +1,6 @@
-package persistenceLayer.model;
+package persistenceLayer.entities;
 
-import persistenceLayer.model.AddressModel;
+import persistenceLayer.entities.AddressModel;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;

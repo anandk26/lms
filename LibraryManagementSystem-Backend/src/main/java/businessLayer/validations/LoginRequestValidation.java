@@ -1,4 +1,4 @@
-package buissnessLayer.validations;
+package businessLayer.validations;
 
 public class LoginRequestValidation {
     public boolean isRequestValid(String username, String password) {

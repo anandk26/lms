@@ -4,8 +4,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import persistenceLayer.model.CustomerDataModel;
 
+import org.springframework.stereotype.Component;
+
+import persistenceLayer.entities.CustomerDataModel;
+
+@Component
 public class CustomerDataDAO {
 
     private EntityManagerFactory entityManagerFactory;

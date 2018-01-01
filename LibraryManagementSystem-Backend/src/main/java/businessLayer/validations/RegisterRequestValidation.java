@@ -1,4 +1,4 @@
-package buissnessLayer.validations;
+package businessLayer.validations;
 
 import beans.services.customerservice.register.RegisterRequestBean;
 
