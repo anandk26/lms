@@ -1,4 +1,4 @@
-package persistenceLayer.dao;
+package persistencelayer.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 import org.springframework.stereotype.Component;
 
-import persistenceLayer.entities.AddressModel;
+import persistencelayer.entities.AddressModel;
 
 @Component
 public class AddressDAO {

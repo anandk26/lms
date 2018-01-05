@@ -1,12 +1,11 @@
-package persistenceLayer.model;
+package persistencelayer.model;
 
 import beans.services.customerservice.register.RegisterRequestBean;
-
-import persistenceLayer.dao.CustomerDataDAO;
-import persistenceLayer.dao.LoginDataDAO;
-import persistenceLayer.entities.AddressModel;
-import persistenceLayer.entities.CustomerDataModel;
-import persistenceLayer.entities.LoginDataModel;
+import persistencelayer.dao.CustomerDataDAO;
+import persistencelayer.dao.LoginDataDAO;
+import persistencelayer.entities.AddressModel;
+import persistencelayer.entities.CustomerDataModel;
+import persistencelayer.entities.LoginDataModel;
 
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;

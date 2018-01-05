@@ -1,4 +1,4 @@
-package persistenceLayer.dao;
+package persistencelayer.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -7,7 +7,7 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Component;
 
-import persistenceLayer.entities.CustomerDataModel;
+import persistencelayer.entities.CustomerDataModel;
 
 @Component
 public class CustomerDataDAO {

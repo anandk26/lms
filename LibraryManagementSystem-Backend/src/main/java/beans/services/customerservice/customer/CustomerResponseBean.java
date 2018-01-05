@@ -1,8 +1,9 @@
 package beans.services.customerservice.customer;
 
 import beans.GenericResponseBean;
+import persistencelayer.entities.CustomerDataModel;
+
 import javax.xml.bind.annotation.XmlType;
-import persistenceLayer.entities.CustomerDataModel;
 
 @XmlType(name = "")
 public class CustomerResponseBean extends GenericResponseBean{

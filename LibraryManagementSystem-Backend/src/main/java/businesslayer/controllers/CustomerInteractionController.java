@@ -1,16 +1,14 @@
-package businessLayer.controllers;
+package businesslayer.controllers;
 
 import beans.GenericResponseBean;
 import beans.services.customerservice.customer.CustomerResponseBean;
 import beans.services.customerservice.register.RegisterRequestBean;
-
-import persistenceLayer.model.CustomerInteractionModel;
-import persistenceLayer.entities.CustomerDataModel;
-import persistenceLayer.SpringPersistenceContext;
-
-import businessLayer.utils.Constants;
-import businessLayer.validations.LoginRequestValidation;
-import businessLayer.validations.RegisterRequestValidation;
+import businesslayer.utils.Constants;
+import businesslayer.validations.LoginRequestValidation;
+import businesslayer.validations.RegisterRequestValidation;
+import persistencelayer.SpringPersistenceContext;
+import persistencelayer.entities.CustomerDataModel;
+import persistencelayer.model.CustomerInteractionModel;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

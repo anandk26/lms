@@ -1,4 +1,4 @@
-package businessLayer.utils;
+package businesslayer.utils;
 
 public class Constants {
 	public static final int HTTP_BAD_REQEST = 400;

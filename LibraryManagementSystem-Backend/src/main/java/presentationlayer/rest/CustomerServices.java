@@ -1,4 +1,4 @@
-package presentationLayer.rest;
+package presentationlayer.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -9,10 +9,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import beans.services.customerservice.register.RegisterRequestBean;
+import businesslayer.SpringBusinessContext;
+import businesslayer.controllers.CustomerInteractionController;
 import beans.GenericResponseBean;
-import businessLayer.SpringBusinessContext;
-
-import businessLayer.controllers.CustomerInteractionController;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

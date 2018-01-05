@@ -1,6 +1,5 @@
-package persistenceLayer.entities;
+package persistencelayer.entities;
 
-import persistenceLayer.entities.AddressModel;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import org.springframework.stereotype.Component;
+
+import persistencelayer.entities.AddressModel;
 
 @Component
 @Entity

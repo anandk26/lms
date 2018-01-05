@@ -1,10 +1,10 @@
-package persistenceLayer;
+package persistencelayer;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "persistenceLayer")
+@ComponentScan(basePackages = "persistencelayer")
 public class SpringPersistenceContext {
     
 }
