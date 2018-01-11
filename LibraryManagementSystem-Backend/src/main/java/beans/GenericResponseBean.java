@@ -1,9 +1,15 @@
 package beans;
 
-public class RegisterResponseBean {
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+@XmlRootElement
+public class GenericResponseBean {
+    
 	private int responseCode;
 	private String reponseMessage;
 
+    @XmlTransient
 	public int getResponseCode() {
 		return responseCode;
 	}

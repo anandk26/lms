@@ -1,6 +1,6 @@
-package validations;
+package businesslayer.validations;
 
-import beans.RegisterRequestBean;
+import beans.services.customerservice.register.RegisterRequestBean;
 
 public class RegisterRequestValidation{
 

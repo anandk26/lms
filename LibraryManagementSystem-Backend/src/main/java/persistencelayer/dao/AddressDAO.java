@@ -1,21 +1,25 @@
-package model.dao;
+package persistencelayer.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import model.entities.CustomerDataModel;
 
-public class CustomerDataDAO {
+import org.springframework.stereotype.Component;
 
+import persistencelayer.entities.AddressModel;
+
+@Component
+public class AddressDAO {
+    
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
     
-    public boolean writeData(CustomerDataModel customer) {
-        try{
+	public boolean writeData(AddressModel address) {
+		try{
             this.entityManagerFactory = Persistence.createEntityManagerFactory("LMS_PU");
             this.entityManager = this.entityManagerFactory.createEntityManager();
             this.entityManager.getTransaction().begin();
-            this.entityManager.persist(customer);
+            this.entityManager.persist(address);
             this.entityManager.getTransaction().commit();
         } catch(Exception ex) {
             return false;
@@ -26,8 +30,8 @@ public class CustomerDataDAO {
 		return true;
 	}
 	
-	public CustomerDataModel readData(String customerId) {
-		CustomerDataModel customer = new CustomerDataModel();
-		return customer;
+	public AddressModel readData(String addressId) {
+		AddressModel address = new AddressModel();
+		return address;
 	}
 }

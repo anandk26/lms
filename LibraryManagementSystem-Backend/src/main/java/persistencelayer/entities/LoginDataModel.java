@@ -1,10 +1,15 @@
-package model.entities;
+package persistencelayer.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.stereotype.Component;
 
+@XmlRootElement
+@Component
 @Entity
 @Table(schema = "LMS", name="LOGINDATA")
 public class LoginDataModel {
@@ -24,6 +29,7 @@ public class LoginDataModel {
 		this.username = username;
 	}
 
+    @XmlTransient
 	public String getPassword() {
 		return password;
 	}

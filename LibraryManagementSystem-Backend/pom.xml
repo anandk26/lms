@@ -11,12 +11,22 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
+        <!-- Test dependencies start -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.7</version>
+            <scope>test</scope>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.5</version>
             <scope>test</scope>
         </dependency>
+        <!-- Test dependencies end -->
+        <!-- Jersey dependencies start -->
         <dependency>
             <groupId>org.glassfish.jersey.bundles</groupId>
             <artifactId>jaxrs-ri</artifactId>
@@ -27,6 +37,8 @@
             <artifactId>jersey-media-moxy</artifactId>
             <version>2.16</version>
         </dependency>
+        <!-- Jersey dependencies end -->
+        <!-- JPA dependencies start -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.1-api</artifactId>
@@ -42,7 +54,14 @@
             <artifactId>ojdbc14</artifactId>
             <version>10.2.0.4.0</version>
         </dependency>
-
+        <!-- JPA dependencies end -->
+        <!-- Spring dependencies start -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.0.2.RELEASE</version>
+        </dependency>
+        <!-- Spring dependencies end -->
     </dependencies>
     <build>
         <plugins>

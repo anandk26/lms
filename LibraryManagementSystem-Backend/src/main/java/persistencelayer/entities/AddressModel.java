@@ -1,4 +1,4 @@
-package model.entities;
+package persistencelayer.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
+@Component
 @Entity
 @Table(name = "ADDRESS", schema="LMS")
 @SequenceGenerator(name = "add_seq", sequenceName = "ADDRESS_SEQ")
